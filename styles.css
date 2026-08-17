@@ -253,16 +253,19 @@ a{ color: inherit; }
   max-width: 372px;
   aspect-ratio: 1 / 1;
 }
+/* Decorative halo rings. The photo column's right edge can sit flush against
+   the .wrap gutter (28px), so any inset larger than that spills past the
+   viewport and creates a horizontal scrollbar — keep both insets <= 26px. */
 .hero-photo::before{
   content: "";
-  position: absolute; inset: -22px;
+  position: absolute; inset: -13px;
   border-radius: 50%;
   border: 1px solid var(--line);
   opacity: 0.75;
 }
 .hero-photo::after{
   content: "";
-  position: absolute; inset: -46px;
+  position: absolute; inset: -26px;
   border-radius: 50%;
   border: 1px solid var(--line-soft);
   opacity: 0.6;
@@ -411,7 +414,9 @@ a{ color: inherit; }
 
 /* ---------- Proyecto ---------- */
 .proyecto{ background: var(--bg-alt); }
-.proyecto-grid{ max-width: 780px; }
+/* Cap the inner column, not the .wrap itself — shrinking .wrap would re-centre
+   it and push this section's left edge out of line with every other section. */
+.proyecto-grid > div{ max-width: 780px; }
 .proyecto-sub{
   font-family: var(--serif);
   font-style: italic;
@@ -482,8 +487,10 @@ a{ color: inherit; }
   color: var(--accent);
   border-bottom: 1px solid var(--accent-soft);
   white-space: nowrap;
-  padding: 12px 8px 10px;
-  margin: -12px -8px;
+  /* Grows the hit area to >=44px without pushing past the container's right
+     edge — a negative right margin here overflows the page. */
+  padding: 12px 0 10px 10px;
+  margin: -12px 0 -10px -10px;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .pub-link:hover{ color: var(--gold); border-color: var(--gold); }
@@ -493,8 +500,8 @@ a{ color: inherit; }
   font-size: 0.92rem;
   color: var(--text);
   border-bottom: 1px solid var(--line);
-  padding: 13px 6px 12px;
-  margin: -13px -6px 0;
+  padding: 13px 6px 12px 0;
+  margin: -13px 0 0;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .scholar-link:hover{ color: var(--accent); border-color: var(--accent); }
@@ -643,32 +650,13 @@ a{ color: inherit; }
 }
 .to-top:hover{ color: var(--accent); }
 
-/* ---------- Responsive ---------- */
-@media (max-width: 980px){
-  .site-nav{ gap: 22px; }
-  .site-nav a{ font-size: 0.86rem; }
-}
-
-@media (max-width: 880px){
-  .hero{
-    grid-template-columns: 1fr;
-    padding-top: 116px; padding-bottom: 72px;
-    gap: 38px; min-height: 0;
-  }
-  .hero-photo{ max-width: 208px; order: -1; justify-self: start; }
-  .hero-photo::before{ inset: -14px; }
-  .hero-photo::after{ inset: -28px; }
-  .scroll-cue{ display: none; }
-
-  .perfil-grid{ grid-template-columns: 1fr; gap: 44px; }
-  .stats-band{ grid-template-columns: 1fr; margin-top: 44px; }
-  .stat{ border-left: none; border-top: 1px solid var(--line); padding: 26px 0; }
-  .stat:first-child{ border-top: none; padding-top: 4px; }
-  .stat-label{ max-width: 40ch; }
-
-  .docencia-grid{ grid-template-columns: 1fr; margin-top: 40px; }
-  .contact-grid{ grid-template-columns: 1fr; }
-
+/* ---------- Responsive ----------
+   Two independent breakpoints, deliberately not merged:
+   - 1060px: the nav collapses to the hamburger. Seven items + CTA + the
+     language switcher stop fitting on one row below ~1060px; measured, not
+     guessed. Raise this if another nav item is ever added.
+   - 880px: the page layout goes single-column. */
+@media (max-width: 1060px){
   .site-nav{
     position: absolute; top: 76px; left: 0; right: 0;
     background: var(--bg);
@@ -691,6 +679,27 @@ a{ color: inherit; }
     width: 100%; padding: 14px 0 4px;
     border-top: 1px solid var(--line); margin: 4px 0 0 -6px;
   }
+}
+
+@media (max-width: 880px){
+  .hero{
+    grid-template-columns: 1fr;
+    padding-top: 116px; padding-bottom: 72px;
+    gap: 38px; min-height: 0;
+  }
+  .hero-photo{ max-width: 208px; order: -1; justify-self: start; }
+  .hero-photo::before{ inset: -14px; }
+  .hero-photo::after{ inset: -28px; }
+  .scroll-cue{ display: none; }
+
+  .perfil-grid{ grid-template-columns: 1fr; gap: 44px; }
+  .stats-band{ grid-template-columns: 1fr; margin-top: 44px; }
+  .stat{ border-left: none; border-top: 1px solid var(--line); padding: 26px 0; }
+  .stat:first-child{ border-top: none; padding-top: 4px; }
+  .stat-label{ max-width: 40ch; }
+
+  .docencia-grid{ grid-template-columns: 1fr; margin-top: 40px; }
+  .contact-grid{ grid-template-columns: 1fr; }
 }
 
 @media (max-width: 560px){
