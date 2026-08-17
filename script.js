@@ -1,3 +1,5 @@
+document.documentElement.classList.add('js-reveal');
+
 (function () {
   var header = document.querySelector('.site-header');
   var onScroll = function () {
@@ -44,5 +46,33 @@
     reveals.forEach(function (el) { io.observe(el); });
   } else {
     reveals.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  // Keep the current section's anchor when switching language.
+  document.querySelectorAll('.lang-switch a').forEach(function (a) {
+    var hash = window.location.hash;
+    if (hash) a.href = a.getAttribute('href').split('#')[0] + hash;
+  });
+
+  // Highlight the nav link for the section currently in view.
+  var navLinks = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+  var sections = navLinks
+    .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
+    .filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    var setActive = function (id) {
+      navLinks.forEach(function (a) {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+      });
+    };
+    var spy = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px' }
+    );
+    sections.forEach(function (s) { spy.observe(s); });
   }
 })();

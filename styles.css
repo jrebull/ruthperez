@@ -5,9 +5,10 @@
   --text: #1c1b18;
   --text-soft: #5c594f;
   --accent: #2f5d50;
-  --accent-soft: #4f7d70;
-  --gold: #a9834f;
+  --accent-soft: #456f62;
+  --gold: #846436;
   --line: #e3ddd0;
+  --on-accent: #fbfaf6;
   --shadow: rgba(28,27,24,0.10);
   --serif: "Fraunces", Georgia, serif;
   --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -24,6 +25,7 @@
     --accent-soft: #6ea395;
     --gold: #d3b47f;
     --line: #333227;
+    --on-accent: #15150f;
     --shadow: rgba(0,0,0,0.45);
   }
 }
@@ -34,6 +36,13 @@ html{ scroll-behavior: smooth; }
   html{ scroll-behavior: auto; }
   *{ animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
 }
+
+a:focus-visible, button:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 
 body{
   margin: 0;
@@ -65,13 +74,15 @@ a{ color: inherit; }
 }
 .skip-link:focus{ left: 16px; top: 16px; }
 
-/* ---------- Reveal on scroll ---------- */
-.reveal{
+/* ---------- Reveal on scroll ----------
+   Visible by default (no-JS / JS-not-yet-run safe). JS adds "js-reveal"
+   to <html> before paint; only then do elements hide pending animation. */
+.js-reveal .reveal{
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-.reveal.is-visible{ opacity: 1; transform: translateY(0); }
+.js-reveal .reveal.is-visible{ opacity: 1; transform: translateY(0); }
 
 /* ---------- Header ---------- */
 .site-header{
@@ -100,6 +111,7 @@ a{ color: inherit; }
   transition: color 0.2s ease;
 }
 .site-nav a:hover{ color: var(--accent); }
+.site-nav a.active{ color: var(--accent); font-weight: 500; }
 .nav-cta{
   border: 1px solid var(--line);
   padding: 8px 18px !important;
@@ -109,20 +121,25 @@ a{ color: inherit; }
 .nav-cta:hover{ border-color: var(--accent); }
 
 .lang-switch{
-  display: flex; align-items: center; gap: 8px;
-  font-size: 0.78rem; letter-spacing: 0.04em;
-  padding-left: 8px;
+  display: flex; align-items: center; gap: 2px;
+  font-size: 0.8rem; letter-spacing: 0.03em;
+  margin-left: 6px;
 }
-.lang-switch a{
+.lang-switch a, .lang-switch .lang-current{
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 40px; padding: 12px 8px;
+  border-radius: 8px;
   text-decoration: none; color: var(--text-soft);
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background 0.2s ease;
 }
-.lang-switch a:hover{ color: var(--accent); }
+.lang-switch a:hover{ color: var(--accent); background: var(--bg-alt); }
 .lang-switch .lang-current{ color: var(--accent); font-weight: 600; }
 
 .nav-toggle{
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 8px;
+  display: none; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+  width: 44px; height: 44px;
+  background: none; border: none; cursor: pointer; padding: 0;
+  flex-shrink: 0;
 }
 .nav-toggle span{
   width: 22px; height: 1.5px; background: var(--text);
@@ -180,7 +197,7 @@ a{ color: inherit; }
   letter-spacing: 0.01em;
   transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
 }
-.btn-primary{ background: var(--accent); color: #fbfaf6; }
+.btn-primary{ background: var(--accent); color: var(--on-accent); }
 .btn-primary:hover{ transform: translateY(-2px); background: var(--accent-soft); }
 .btn-ghost{ border: 1px solid var(--line); color: var(--text); }
 .btn-ghost:hover{ border-color: var(--accent); transform: translateY(-2px); }
@@ -315,16 +332,19 @@ a{ color: inherit; }
   font-size: 0.86rem;
   color: var(--accent);
   border-bottom: 1px solid var(--accent-soft);
-  padding-bottom: 2px;
   white-space: nowrap;
+  padding: 12px 8px 10px;
+  margin: -12px -8px;
 }
 .pub-link:hover{ color: var(--gold); border-color: var(--gold); }
 .scholar-link{
+  display: inline-block;
   text-decoration: none;
   font-size: 0.92rem;
   color: var(--text);
   border-bottom: 1px solid var(--line);
-  padding-bottom: 3px;
+  padding: 10px 6px 9px;
+  margin: -10px -6px 0;
 }
 .scholar-link:hover{ color: var(--accent); border-color: var(--accent); }
 
