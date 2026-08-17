@@ -649,6 +649,14 @@ a{ color: inherit; }
   transition: color 0.2s ease;
 }
 .to-top:hover{ color: var(--accent); }
+.footer-meta{ margin-top: 20px; }
+.footer-meta p{
+  margin: 0;
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+  color: var(--text-soft);
+  opacity: 0.72;
+}
 
 /* ---------- Responsive ----------
    Two independent breakpoints, deliberately not merged:

@@ -88,6 +88,26 @@ document.documentElement.classList.add('js-reveal');
     sections.forEach(function (s) { spy.observe(s); });
   }
 
+  /* ---------- Localise the "last updated" date ----------
+     The markup carries an ISO date (stamped at deploy time by stamp-date.py),
+     which is already readable on its own — this only prettifies it. */
+  var updated = document.getElementById('lastUpdated');
+  if (updated && window.Intl && Intl.DateTimeFormat) {
+    var iso = updated.getAttribute('datetime');
+    var parts = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+    if (parts) {
+      try {
+        var d = new Date(Date.UTC(+parts[1], +parts[2] - 1, +parts[3]));
+        updated.textContent = new Intl.DateTimeFormat(
+          document.documentElement.lang || 'es',
+          { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }
+        ).format(d);
+      } catch (err) {
+        /* keep the ISO date already in the markup */
+      }
+    }
+  }
+
   /* ---------- Copy e-mail to clipboard ---------- */
   var copyBtn = document.getElementById('copyEmail');
   if (copyBtn) {

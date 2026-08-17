@@ -1,5 +1,9 @@
 [build]
   publish = "."
+  # Stamps the deploy date into the footer of each language version. If it ever
+  # fails, the date committed in the HTML is still a real (if stale) date, so a
+  # broken build can't leave a placeholder on the page.
+  command = "python3 stamp-date.py"
 
 [[headers]]
   for = "/*"
