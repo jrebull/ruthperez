@@ -2,22 +2,32 @@ document.documentElement.classList.add('js-reveal');
 
 (function () {
   var header = document.querySelector('.site-header');
+  var progress = document.getElementById('progressBar');
+
   var onScroll = function () {
     header.classList.toggle('scrolled', window.scrollY > 8);
+    if (progress) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    }
   };
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
 
+  /* ---------- Mobile nav ---------- */
   var toggle = document.getElementById('navToggle');
   var nav = document.getElementById('siteNav');
-  toggle.addEventListener('click', function () {
-    var open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
+
   var closeNav = function () {
     nav.classList.remove('open');
     toggle.setAttribute('aria-expanded', 'false');
   };
+
+  toggle.addEventListener('click', function () {
+    var open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
   nav.querySelectorAll('a').forEach(function (a) {
     a.addEventListener('click', closeNav);
   });
@@ -30,6 +40,7 @@ document.documentElement.classList.add('js-reveal');
     if (e.key === 'Escape') closeNav();
   });
 
+  /* ---------- Reveal on scroll ---------- */
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     var io = new IntersectionObserver(
@@ -41,24 +52,25 @@ document.documentElement.classList.add('js-reveal');
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
     );
     reveals.forEach(function (el) { io.observe(el); });
   } else {
     reveals.forEach(function (el) { el.classList.add('is-visible'); });
   }
 
-  // Keep the current section's anchor when switching language.
+  /* ---------- Keep the current section's anchor when switching language ---------- */
   document.querySelectorAll('.lang-switch a').forEach(function (a) {
     var hash = window.location.hash;
     if (hash) a.href = a.getAttribute('href').split('#')[0] + hash;
   });
 
-  // Highlight the nav link for the section currently in view.
+  /* ---------- Highlight the nav link for the section in view ---------- */
   var navLinks = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
   var sections = navLinks
     .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
     .filter(Boolean);
+
   if ('IntersectionObserver' in window && sections.length) {
     var setActive = function (id) {
       navLinks.forEach(function (a) {
@@ -74,5 +86,40 @@ document.documentElement.classList.add('js-reveal');
       { rootMargin: '-45% 0px -50% 0px' }
     );
     sections.forEach(function (s) { spy.observe(s); });
+  }
+
+  /* ---------- Copy e-mail to clipboard ---------- */
+  var copyBtn = document.getElementById('copyEmail');
+  if (copyBtn) {
+    var resetTimer;
+    copyBtn.addEventListener('click', function () {
+      var email = copyBtn.getAttribute('data-email');
+
+      var flash = function () {
+        copyBtn.classList.add('is-copied');
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(function () {
+          copyBtn.classList.remove('is-copied');
+        }, 2000);
+      };
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(flash, function () {
+          window.location.href = 'mailto:' + email;
+        });
+      } else {
+        // Older browsers: select a temporary field and copy from it.
+        var tmp = document.createElement('textarea');
+        tmp.value = email;
+        tmp.setAttribute('readonly', '');
+        tmp.style.position = 'absolute';
+        tmp.style.left = '-9999px';
+        document.body.appendChild(tmp);
+        tmp.select();
+        try { document.execCommand('copy'); flash(); }
+        catch (err) { window.location.href = 'mailto:' + email; }
+        document.body.removeChild(tmp);
+      }
+    });
   }
 })();

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ruth Manuela Pérez Hernández — Health Economics &amp; AI for Public Health</title>
-<meta name="description" content="PhD in Health Systems Sciences. Health economics, public policy evaluation, and artificial intelligence applied to epidemiological surveillance. Mexican Social Security Institute (IMSS).">
+<meta name="description" content="PhD in Health Systems Sciences. Health economics, public policy evaluation, and artificial intelligence applied to epidemiological surveillance. Mexican Social Security Institute.">
 <meta name="theme-color" content="#faf8f4">
 <link rel="canonical" href="/en/">
 <link rel="alternate" hreflang="es" href="/">
@@ -13,6 +13,7 @@
 <link rel="alternate" hreflang="x-default" href="/">
 
 <meta property="og:type" content="profile">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="Ruth Manuela Pérez Hernández — PhD in Health Systems Sciences">
 <meta property="og:description" content="Health economics, public policy evaluation, and artificial intelligence applied to epidemiological surveillance.">
 <meta property="og:image" content="../assets/ruth-profile.png">
@@ -25,6 +26,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="../styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ruth Manuela Pérez Hernández",
+  "honorificPrefix": "Dra.",
+  "jobTitle": "Associate Researcher B",
+  "affiliation": { "@type": "Organization", "name": "Instituto Mexicano del Seguro Social" },
+  "email": "mailto:doctoradoruthperez@gmail.com",
+  "identifier": "https://orcid.org/0000-0003-3261-1220",
+  "sameAs": [
+    "https://orcid.org/0000-0003-3261-1220",
+    "https://scholar.google.com.mx/citations?user=G9jRzNEAAAAJ"
+  ],
+  "knowsAbout": ["Health economics", "Public policy evaluation", "Artificial intelligence applied to public health", "Epidemiological surveillance"]
+}
+</script>
 </head>
 <body>
 
@@ -33,14 +52,15 @@
 <header class="site-header" id="top">
   <div class="wrap header-inner">
     <a class="brand" href="#top">RM<span>PH</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav">
       <span></span><span></span><span></span>
     </button>
-    <nav class="site-nav" id="siteNav">
+    <nav class="site-nav" id="siteNav" aria-label="Main navigation">
       <a href="#perfil">Profile</a>
       <a href="#investigacion">Research</a>
       <a href="#proyecto">EpiForecast‑MX</a>
       <a href="#publicaciones">Publications</a>
+      <a href="#docencia">Teaching</a>
       <a href="#congresos">Conferences</a>
       <a href="#contacto" class="nav-cta">Contact</a>
       <div class="lang-switch" aria-label="Language selector">
@@ -50,6 +70,7 @@
       </div>
     </nav>
   </div>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 </header>
 
 <main>
@@ -58,52 +79,73 @@
     <div class="hero-text reveal">
       <p class="eyebrow">Health Economics &amp; Artificial Intelligence for Public Health</p>
       <h1>Ruth Manuela<br>Pérez Hernández</h1>
-      <p class="hero-role">PhD in Health Systems Sciences<br>Mexican Social Security Institute (IMSS)</p>
+      <p class="hero-role">PhD in Health Systems Sciences</p>
+      <p class="hero-affil">Associate Researcher B · Mexican Social Security Institute</p>
       <p class="hero-lede">I generate evidence on the cost, impact, and sustainability of chronic
         disease, mental health, and work disability within Mexico's social
-        security system, and I build artificial-intelligence models to
+        security system, and I build artificial intelligence models to
         anticipate them.</p>
       <div class="hero-actions">
-        <a href="#publicaciones" class="btn btn-primary">View publications</a>
+        <a href="#proyecto" class="btn btn-primary">Explore EpiForecast‑MX</a>
         <a href="#contacto" class="btn btn-ghost">Contact</a>
       </div>
     </div>
     <div class="hero-photo reveal">
-      <img src="../assets/ruth-profile.png" alt="Portrait of Ruth Manuela Pérez Hernández" width="630" height="632">
+      <img src="../assets/ruth-profile.png" alt="Portrait of Ruth Manuela Pérez Hernández" width="630" height="632" fetchpriority="high">
     </div>
+    <a class="scroll-cue" href="#perfil"><span class="cue-line"></span>Profile</a>
   </section>
 
   <section id="perfil" class="section perfil">
     <div class="wrap">
       <p class="section-label reveal">01 — Profile</p>
       <div class="perfil-grid">
-        <p class="perfil-text reveal">Her research examines the <em>efficiency, impact, and
-          sustainability</em> of health interventions, labor productivity,
-          and institutional spending, with an emphasis on chronic disease,
-          mental health, and work disability. She applies quantitative and
-          artificial-intelligence tools to turn clinical and epidemiological
-          evidence into information useful for decision-making in social
-          security.</p>
-        <aside class="perfil-stats reveal">
-          <div class="stat">
-            <span class="stat-num">175+</span>
-            <span class="stat-label">Citations accrued across peer‑reviewed scientific output</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">5</span>
-            <span class="stat-label">Indexed articles as author and co‑author</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">27+</span>
-            <span class="stat-label">Years with the Mexican Social Security Institute</span>
-          </div>
+        <div>
+          <p class="perfil-text reveal">Her research examines the <em>efficiency, impact, and
+            sustainability</em> of health interventions, labor productivity, and
+            institutional spending, with an emphasis on chronic disease, mental
+            health, and work disability.</p>
+          <p class="perfil-text reveal">She applies quantitative and artificial intelligence tools to turn
+            clinical and epidemiological evidence into information useful for
+            decision-making in social security, and she leads interinstitutional
+            collaborations that connect academia with institutional practice.</p>
+        </div>
+        <aside class="formacion-panel reveal">
+          <p class="panel-heading">Education</p>
           <dl class="formacion">
-            <div><dt>PhD</dt><dd>National Institute of Public Health, Mexico</dd></div>
-            <div><dt>Master's</dt><dd>Autonomous University of the State of Morelos</dd></div>
-            <div><dt>Bachelor's</dt><dd>Autonomous University of the State of Morelos</dd></div>
-            <div><dt>Scholarship</dt><dd>SECIHTI (2016 · 2002)</dd></div>
+            <div>
+              <dt>Doctorate in Health Systems Sciences</dt>
+              <dd>National Institute of Public Health</dd>
+            </div>
+            <div>
+              <dt>Master's in Administration</dt>
+              <dd>Autonomous University of the State of Morelos</dd>
+            </div>
+            <div>
+              <dt>Bachelor's in Public Accounting</dt>
+              <dd>Autonomous University of the State of Morelos</dd>
+            </div>
+            <div>
+              <dt>SECIHTI Scholarship</dt>
+              <dd>2016 · 2002</dd>
+            </div>
           </dl>
         </aside>
+      </div>
+
+      <div class="stats-band reveal">
+        <div class="stat">
+          <span class="stat-num">175+</span>
+          <span class="stat-label">Citations accrued across peer‑reviewed scientific output</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">27</span>
+          <span class="stat-label">Years of service with the Mexican Social Security Institute</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Master's theses supervised through to the awarding of the degree</span>
+        </div>
       </div>
     </div>
   </section>
@@ -150,21 +192,30 @@
       <div class="reveal">
         <p class="section-label">03 — Featured Project</p>
         <h2 class="section-title">EpiForecast‑MX</h2>
-        <p class="proyecto-sub">A methodological, AI‑based model for the predictive and
-          comparative analysis of epidemiological time series for priority
-          conditions in Mexico.</p>
+        <p class="proyecto-sub">A methodological, AI‑based model for the predictive and comparative
+          analysis of epidemiological time series for priority conditions in
+          Mexico.</p>
         <p>It turns public epidemiological data into reproducible predictive
           intelligence, with transferable criteria for progressively
-          incorporating new disease families into the national analysis.
-          Developed through interinstitutional collaboration among IMSS,
-          Tecnológico de Monterrey, the National Institute of Public Health,
-          and the Ramón de la Fuente Muñiz National Institute of Psychiatry.</p>
+          incorporating new disease families into the national analysis. Its
+          purpose is for the models to be integrated into epidemiological
+          surveillance systems, strengthening risk anticipation and the
+          planning of public health interventions.</p>
         <ul class="tag-list">
           <li>Depression</li>
           <li>Alzheimer's disease</li>
           <li>Parkinson's disease</li>
         </ul>
-        <p class="proyecto-status">Ongoing presentation — ALASS 2026 Congress, Montreal, Canada</p>
+        <div class="partners">
+          <p class="partners-label">Interinstitutional collaboration</p>
+          <ul>
+            <li>Mexican Social Security Institute</li>
+            <li>Tecnológico de Monterrey</li>
+            <li>National Institute of Public Health</li>
+            <li>Ramón de la Fuente Muñiz National Institute of Psychiatry</li>
+          </ul>
+        </div>
+        <p class="proyecto-status">Ongoing presentation — ALASS Congress 2026, Montreal, Canada</p>
       </div>
     </div>
   </section>
@@ -176,15 +227,17 @@
       <ul class="pub-list">
         <li class="reveal">
           <div class="pub-main">
-            <h3>Glycemic and Blood Pressure Control in Type 2 Diabetes Mellitus: Disability Costs Covered by Social Security, Evidence from Mexico</h3>
-            <p class="pub-meta"><em>Value in Health Regional Issues</em> · 2025 · Lead author</p>
+            <span class="pub-badge">Lead author</span>
+            <h3>Glycemic and Blood Pressure Control in Type 2 Diabetes Mellitus: Disability Costs Covered by Social Security, Evidence From Mexico</h3>
+            <p class="pub-meta"><em>Value in Health Regional Issues</em> · 2025</p>
           </div>
           <a class="pub-link" href="https://doi.org/10.1016/j.vhri.2024.101071" target="_blank" rel="noopener">DOI ↗</a>
         </li>
         <li class="reveal">
           <div class="pub-main">
+            <span class="pub-badge">Corresponding author</span>
             <h3>Sedentarismo laboral en distintos contextos ocupacionales en México: prevalencia y factores asociados</h3>
-            <p class="pub-meta"><em>Salud Pública de México</em> · 2021 · Corresponding author</p>
+            <p class="pub-meta"><em>Salud Pública de México</em> · 2021</p>
           </div>
           <a class="pub-link" href="https://doi.org/10.21149/12541" target="_blank" rel="noopener">DOI ↗</a>
         </li>
@@ -197,14 +250,14 @@
         </li>
         <li class="reveal">
           <div class="pub-main">
-            <h3>HPV Testing for Cervical Cancer Screening Appears More Cost‑Effective than Papanicolaou Cytology in Mexico</h3>
+            <h3>HPV testing for cervical cancer screening appears more cost‑effective than Papanicolau cytology in Mexico</h3>
             <p class="pub-meta"><em>Cancer Causes &amp; Control</em> · 2011 · Co‑author</p>
           </div>
           <a class="pub-link" href="https://doi.org/10.1007/s10552-010-9694-3" target="_blank" rel="noopener">DOI ↗</a>
         </li>
         <li class="reveal">
           <div class="pub-main">
-            <h3>Estimating the Cost of Treating Patients with Liver Cirrhosis at the Mexican Social Security Institute</h3>
+            <h3>Estimating the cost of treating patients with liver cirrhosis at the Mexican Social Security Institute</h3>
             <p class="pub-meta"><em>Salud Pública de México</em> · 2010 · Co‑author</p>
           </div>
           <a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/21271007/" target="_blank" rel="noopener">PubMed ↗</a>
@@ -214,9 +267,89 @@
     </div>
   </section>
 
+  <section id="docencia" class="section docencia">
+    <div class="wrap">
+      <p class="section-label reveal">05 — Teaching &amp; Training</p>
+      <h2 class="section-title reveal">Training of human resources</h2>
+      <p class="section-intro reveal">Supervision of master's theses at the Instituto Tecnológico y de Estudios
+        Superiores de Monterrey, all completed with the degree awarded, on
+        epidemiological forecasting with machine learning methods.</p>
+      <ul class="tesis-list">
+        <li class="reveal">
+          <div>
+            <p class="tesis-title">Generalización de modelos nacionales de pronóstico epidemiológico hacia un enfoque modular con desagregación por sexo y entidad federativa en México</p>
+            <p class="tesis-author">Javier Augusto Rebull Saucedo</p>
+          </div>
+          <span class="tesis-year">2026</span>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="tesis-title">Predicción de brotes de sarampión en México mediante modelos de aprendizaje automático (2010–2023)</p>
+            <p class="tesis-author">Gerardo Miguel Pérez Solís</p>
+          </div>
+          <span class="tesis-year">2026</span>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="tesis-title">Análisis y pronóstico de la depresión en México: de la evidencia epidemiológica a la inteligencia predictiva</p>
+            <p class="tesis-author">Stephanie Fortiz de Ita</p>
+          </div>
+          <span class="tesis-year">2026</span>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="tesis-title">Análisis y pronóstico epidemiológico de enfermedades neurológicas y trastornos mentales con enfoque a la enfermedad de Parkinson</p>
+            <p class="tesis-author">Oscar Mauricio Becerra Alegra</p>
+          </div>
+          <span class="tesis-year">2026</span>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="tesis-title">Análisis y pronóstico epidemiológico de la enfermedad de Alzheimer en México</p>
+            <p class="tesis-author">Jorge Steven Reyes Londoño</p>
+          </div>
+          <span class="tesis-year">2026</span>
+        </li>
+      </ul>
+
+      <div class="docencia-grid">
+        <div class="docencia-card reveal">
+          <h3>Graduate teaching</h3>
+          <ul>
+            <li>
+              <strong>Introduction to qualitative methods applied to public health</strong>
+              <span class="meta">Master's · 2018 and 2025–2026</span>
+            </li>
+            <li>
+              <strong>Application of quantitative and qualitative methods to health systems research</strong>
+              <span class="meta">Doctorate in Health Systems · 2022 and 2023</span>
+            </li>
+            <li>
+              <strong>Doctoral seminars</strong>
+              <span class="meta">Epistemology (2024) · Research (2018)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="docencia-card reveal">
+          <h3>Peer review</h3>
+          <ul>
+            <li>
+              <strong>Modelos de regresión para el análisis del gasto catastrófico en salud, con énfasis en regresión cuantílica</strong>
+              <span class="meta">Academic review · Colombia · 2026</span>
+            </li>
+            <li>
+              <strong>Household cost of accessing contraceptive services among women in urban communities in Ghana</strong>
+              <span class="meta">External peer reviewer · 2024</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="congresos" class="section congresos">
     <div class="wrap">
-      <p class="section-label reveal">05 — Conferences &amp; Talks</p>
+      <p class="section-label reveal">06 — Conferences &amp; Talks</p>
       <h2 class="section-title reveal">Recent outreach</h2>
       <ol class="timeline">
         <li class="reveal is-upcoming">
@@ -225,7 +358,7 @@
             <p class="tl-tag">Upcoming</p>
             <h3>ALASS Congress 2026</h3>
             <p class="tl-meta">Montreal, Canada · 2026</p>
-            <p>Presentation of the EpiForecast‑MX project: artificial‑intelligence models for predictive epidemiological surveillance.</p>
+            <p>Presentation of the EpiForecast‑MX project: artificial intelligence models for predictive epidemiological surveillance.</p>
           </div>
         </li>
         <li class="reveal">
@@ -261,11 +394,23 @@
 
   <section id="contacto" class="section contacto">
     <div class="wrap">
-      <p class="section-label reveal">06 — Contact</p>
+      <p class="section-label reveal">07 — Contact</p>
       <h2 class="section-title reveal">Let's talk</h2>
-      <p class="contacto-lede reveal">Open to interinstitutional collaboration, peer review, and
-        applied research projects in health economics and artificial
+      <p class="contacto-lede reveal">Open to interinstitutional collaboration, peer review, and applied
+        research projects in health economics and artificial
         intelligence.</p>
+
+      <div class="contact-actions reveal">
+        <a class="btn btn-primary" href="mailto:doctoradoruthperez@gmail.com">Send an email</a>
+        <button class="btn btn-ghost copy-btn" id="copyEmail" type="button"
+                data-email="doctoradoruthperez@gmail.com"
+                data-copied="Email copied">
+          Copy email
+          <span class="copied" aria-hidden="true">Copied</span>
+        </button>
+        <a class="btn btn-ghost" href="../assets/ruth-perez-hernandez.vcf" download>Save contact</a>
+      </div>
+
       <div class="contact-grid reveal">
         <a class="contact-card" href="mailto:doctoradoruthperez@gmail.com">
           <span class="contact-label">Email</span>
@@ -287,8 +432,9 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <p>Ruth Manuela Pérez Hernández</p>
+    <p class="footer-name">Ruth Manuela Pérez Hernández</p>
     <p class="footer-note">ALASS Congress 2026 · Montreal, Canada</p>
+    <a class="to-top" href="#top">Back to top ↑</a>
   </div>
 </footer>
 

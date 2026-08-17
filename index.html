@@ -13,6 +13,7 @@
 <link rel="alternate" hreflang="x-default" href="/">
 
 <meta property="og:type" content="profile">
+<meta property="og:locale" content="es_MX">
 <meta property="og:title" content="Ruth Manuela Pérez Hernández — Dra. en Ciencias en Sistemas de Salud">
 <meta property="og:description" content="Economía de la salud, evaluación de políticas públicas e inteligencia artificial aplicada a la vigilancia epidemiológica.">
 <meta property="og:image" content="assets/ruth-profile.png">
@@ -25,6 +26,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ruth Manuela Pérez Hernández",
+  "honorificPrefix": "Dra.",
+  "jobTitle": "Investigadora Asociada B",
+  "affiliation": { "@type": "Organization", "name": "Instituto Mexicano del Seguro Social" },
+  "email": "mailto:doctoradoruthperez@gmail.com",
+  "identifier": "https://orcid.org/0000-0003-3261-1220",
+  "sameAs": [
+    "https://orcid.org/0000-0003-3261-1220",
+    "https://scholar.google.com.mx/citations?user=G9jRzNEAAAAJ"
+  ],
+  "knowsAbout": ["Economía de la salud", "Evaluación de políticas públicas", "Inteligencia artificial aplicada a la salud pública", "Vigilancia epidemiológica"]
+}
+</script>
 </head>
 <body>
 
@@ -33,14 +52,15 @@
 <header class="site-header" id="top">
   <div class="wrap header-inner">
     <a class="brand" href="#top">RM<span>PH</span></a>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="siteNav">
       <span></span><span></span><span></span>
     </button>
-    <nav class="site-nav" id="siteNav">
+    <nav class="site-nav" id="siteNav" aria-label="Navegación principal">
       <a href="#perfil">Perfil</a>
       <a href="#investigacion">Investigación</a>
       <a href="#proyecto">EpiForecast‑MX</a>
       <a href="#publicaciones">Publicaciones</a>
+      <a href="#docencia">Docencia</a>
       <a href="#congresos">Congresos</a>
       <a href="#contacto" class="nav-cta">Contacto</a>
       <div class="lang-switch" aria-label="Selector de idioma">
@@ -50,6 +70,7 @@
       </div>
     </nav>
   </div>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 </header>
 
 <main>
@@ -58,52 +79,74 @@
     <div class="hero-text reveal">
       <p class="eyebrow">Economía de la salud &amp; Inteligencia Artificial aplicada a Salud Pública</p>
       <h1>Ruth Manuela<br>Pérez Hernández</h1>
-      <p class="hero-role">Doctora en Ciencias en Sistemas de Salud<br>Instituto Mexicano del Seguro Social</p>
+      <p class="hero-role">Doctora en Ciencias en Sistemas de Salud</p>
+      <p class="hero-affil">Investigadora Asociada B · Instituto Mexicano del Seguro Social</p>
       <p class="hero-lede">Genero evidencia sobre el costo, el impacto y la sostenibilidad de las
         enfermedades crónicas, la salud mental y la incapacidad laboral en la
         seguridad social mexicana, y desarrollo modelos de inteligencia
         artificial para anticiparlas.</p>
       <div class="hero-actions">
-        <a href="#publicaciones" class="btn btn-primary">Ver publicaciones</a>
+        <a href="#proyecto" class="btn btn-primary">Conocer EpiForecast‑MX</a>
         <a href="#contacto" class="btn btn-ghost">Contacto</a>
       </div>
     </div>
     <div class="hero-photo reveal">
-      <img src="assets/ruth-profile.png" alt="Retrato de Ruth Manuela Pérez Hernández" width="630" height="632">
+      <img src="assets/ruth-profile.png" alt="Retrato de Ruth Manuela Pérez Hernández" width="630" height="632" fetchpriority="high">
     </div>
+    <a class="scroll-cue" href="#perfil"><span class="cue-line"></span>Perfil</a>
   </section>
 
   <section id="perfil" class="section perfil">
     <div class="wrap">
       <p class="section-label reveal">01 — Perfil</p>
       <div class="perfil-grid">
-        <p class="perfil-text reveal">Su línea de investigación analiza la <em>eficiencia, el impacto y la
-          sostenibilidad</em> de las intervenciones en salud, la productividad
-          laboral y el gasto institucional, con énfasis en enfermedades
-          crónicas, salud mental e incapacidad laboral. Incorpora herramientas
-          cuantitativas y de inteligencia artificial para transformar
-          evidencia clínica y epidemiológica en información útil para la
-          toma de decisiones en seguridad social.</p>
-        <aside class="perfil-stats reveal">
-          <div class="stat">
-            <span class="stat-num">175+</span>
-            <span class="stat-label">Citas acumuladas en producción científica arbitrada</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">5</span>
-            <span class="stat-label">Artículos indexados como autora y coautora</span>
-          </div>
-          <div class="stat">
-            <span class="stat-num">27+</span>
-            <span class="stat-label">Años de trayectoria en el IMSS</span>
-          </div>
+        <div>
+          <p class="perfil-text reveal">Su línea de investigación analiza la <em>eficiencia, el impacto y la
+            sostenibilidad</em> de las intervenciones en salud, la productividad
+            laboral y el gasto institucional, con énfasis en enfermedades
+            crónicas, salud mental e incapacidad laboral.</p>
+          <p class="perfil-text reveal">Incorpora herramientas cuantitativas y de inteligencia artificial para
+            transformar evidencia clínica y epidemiológica en información útil
+            para la toma de decisiones en seguridad social, y dirige
+            colaboraciones interinstitucionales que vinculan la academia con la
+            práctica institucional.</p>
+        </div>
+        <aside class="formacion-panel reveal">
+          <p class="panel-heading">Formación académica</p>
           <dl class="formacion">
-            <div><dt>Doctorado</dt><dd>Instituto Nacional de Salud Pública</dd></div>
-            <div><dt>Maestría</dt><dd>Univ. Autónoma del Estado de Morelos</dd></div>
-            <div><dt>Licenciatura</dt><dd>Univ. Autónoma del Estado de Morelos</dd></div>
-            <div><dt>Becaria</dt><dd>SECIHTI (2016 · 2002)</dd></div>
+            <div>
+              <dt>Doctorado en Ciencias en Sistemas de Salud</dt>
+              <dd>Instituto Nacional de Salud Pública</dd>
+            </div>
+            <div>
+              <dt>Maestría en Administración</dt>
+              <dd>Universidad Autónoma del Estado de Morelos</dd>
+            </div>
+            <div>
+              <dt>Licenciatura en Contaduría Pública</dt>
+              <dd>Universidad Autónoma del Estado de Morelos</dd>
+            </div>
+            <div>
+              <dt>Becaria SECIHTI</dt>
+              <dd>2016 · 2002</dd>
+            </div>
           </dl>
         </aside>
+      </div>
+
+      <div class="stats-band reveal">
+        <div class="stat">
+          <span class="stat-num">175+</span>
+          <span class="stat-label">Citas acumuladas en producción científica arbitrada</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">27</span>
+          <span class="stat-label">Años de trayectoria en el Instituto Mexicano del Seguro Social</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">5</span>
+          <span class="stat-label">Tesis de maestría dirigidas hasta la obtención del grado</span>
+        </div>
       </div>
     </div>
   </section>
@@ -155,16 +198,24 @@
           prioritarios en México.</p>
         <p>Transforma información epidemiológica pública en inteligencia
           predictiva reproducible, con criterios transferibles para incorporar
-          progresivamente nuevas familias de enfermedades al análisis
-          nacional. Desarrollado en colaboración interinstitucional entre el
-          IMSS, el Tecnológico de Monterrey, el Instituto Nacional de Salud
-          Pública y el Instituto Nacional de Psiquiatría Ramón de la Fuente
-          Muñiz.</p>
+          progresivamente nuevas familias de enfermedades al análisis nacional.
+          Su propósito es que los modelos puedan integrarse a los sistemas de
+          vigilancia epidemiológica y fortalecer la anticipación de riesgos y la
+          planeación de intervenciones en salud pública.</p>
         <ul class="tag-list">
           <li>Depresión</li>
           <li>Enfermedad de Alzheimer</li>
           <li>Enfermedad de Parkinson</li>
         </ul>
+        <div class="partners">
+          <p class="partners-label">Colaboración interinstitucional</p>
+          <ul>
+            <li>Instituto Mexicano del Seguro Social</li>
+            <li>Tecnológico de Monterrey</li>
+            <li>Instituto Nacional de Salud Pública</li>
+            <li>Instituto Nacional de Psiquiatría Ramón de la Fuente Muñiz</li>
+          </ul>
+        </div>
         <p class="proyecto-status">Presentación en curso — Congreso ALASS 2026, Montreal, Canadá</p>
       </div>
     </div>
@@ -177,15 +228,17 @@
       <ul class="pub-list">
         <li class="reveal">
           <div class="pub-main">
-            <h3>Glycemic and Blood Pressure Control in Type 2 Diabetes Mellitus: Disability Costs Covered by Social Security, Evidence from Mexico</h3>
-            <p class="pub-meta"><em>Value in Health Regional Issues</em> · 2025 · Autora principal</p>
+            <span class="pub-badge">Autora principal</span>
+            <h3>Glycemic and Blood Pressure Control in Type 2 Diabetes Mellitus: Disability Costs Covered by Social Security, Evidence From Mexico</h3>
+            <p class="pub-meta"><em>Value in Health Regional Issues</em> · 2025</p>
           </div>
           <a class="pub-link" href="https://doi.org/10.1016/j.vhri.2024.101071" target="_blank" rel="noopener">DOI ↗</a>
         </li>
         <li class="reveal">
           <div class="pub-main">
+            <span class="pub-badge">Autora de correspondencia</span>
             <h3>Sedentarismo laboral en distintos contextos ocupacionales en México: prevalencia y factores asociados</h3>
-            <p class="pub-meta"><em>Salud Pública de México</em> · 2021 · Autora de correspondencia</p>
+            <p class="pub-meta"><em>Salud Pública de México</em> · 2021</p>
           </div>
           <a class="pub-link" href="https://doi.org/10.21149/12541" target="_blank" rel="noopener">DOI ↗</a>
         </li>
@@ -198,14 +251,14 @@
         </li>
         <li class="reveal">
           <div class="pub-main">
-            <h3>HPV Testing for Cervical Cancer Screening Appears More Cost‑Effective than Papanicolaou Cytology in Mexico</h3>
+            <h3>HPV testing for cervical cancer screening appears more cost‑effective than Papanicolau cytology in Mexico</h3>
             <p class="pub-meta"><em>Cancer Causes &amp; Control</em> · 2011 · Coautora</p>
           </div>
           <a class="pub-link" href="https://doi.org/10.1007/s10552-010-9694-3" target="_blank" rel="noopener">DOI ↗</a>
         </li>
         <li class="reveal">
           <div class="pub-main">
-            <h3>Estimating the Cost of Treating Patients with Liver Cirrhosis at the Mexican Social Security Institute</h3>
+            <h3>Estimating the cost of treating patients with liver cirrhosis at the Mexican Social Security Institute</h3>
             <p class="pub-meta"><em>Salud Pública de México</em> · 2010 · Coautora</p>
           </div>
           <a class="pub-link" href="https://pubmed.ncbi.nlm.nih.gov/21271007/" target="_blank" rel="noopener">PubMed ↗</a>
@@ -215,9 +268,89 @@
     </div>
   </section>
 
+  <section id="docencia" class="section docencia">
+    <div class="wrap">
+      <p class="section-label reveal">05 — Docencia y formación</p>
+      <h2 class="section-title reveal">Formación de recursos humanos</h2>
+      <p class="section-intro reveal">Dirección de tesis de maestría en el Instituto Tecnológico y de Estudios
+        Superiores de Monterrey, todas concluidas con obtención de grado, en
+        torno al pronóstico epidemiológico con métodos de aprendizaje automático.</p>
+      <ul class="tesis-list">
+        <li class="reveal">
+          <div>
+            <p class="tesis-title">Generalización de modelos nacionales de pronóstico epidemiológico hacia un enfoque modular con desagregación por sexo y entidad federativa en México</p>
+            <p class="tesis-author">Javier Augusto Rebull Saucedo</p>
+          </div>
+          <span class="tesis-year">2026</span>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="tesis-title">Predicción de brotes de sarampión en México mediante modelos de aprendizaje automático (2010–2023)</p>
+            <p class="tesis-author">Gerardo Miguel Pérez Solís</p>
+          </div>
+          <span class="tesis-year">2026</span>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="tesis-title">Análisis y pronóstico de la depresión en México: de la evidencia epidemiológica a la inteligencia predictiva</p>
+            <p class="tesis-author">Stephanie Fortiz de Ita</p>
+          </div>
+          <span class="tesis-year">2026</span>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="tesis-title">Análisis y pronóstico epidemiológico de enfermedades neurológicas y trastornos mentales con enfoque a la enfermedad de Parkinson</p>
+            <p class="tesis-author">Oscar Mauricio Becerra Alegra</p>
+          </div>
+          <span class="tesis-year">2026</span>
+        </li>
+        <li class="reveal">
+          <div>
+            <p class="tesis-title">Análisis y pronóstico epidemiológico de la enfermedad de Alzheimer en México</p>
+            <p class="tesis-author">Jorge Steven Reyes Londoño</p>
+          </div>
+          <span class="tesis-year">2026</span>
+        </li>
+      </ul>
+
+      <div class="docencia-grid">
+        <div class="docencia-card reveal">
+          <h3>Docencia de posgrado</h3>
+          <ul>
+            <li>
+              <strong>Introducción a métodos cualitativos aplicados a la salud pública</strong>
+              <span class="meta">Maestría · 2018 y 2025–2026</span>
+            </li>
+            <li>
+              <strong>Aplicación de métodos cuantitativos y cualitativos a la investigación en sistemas de salud</strong>
+              <span class="meta">Doctorado en Sistemas de Salud · 2022 y 2023</span>
+            </li>
+            <li>
+              <strong>Seminarios de doctorado</strong>
+              <span class="meta">Epistemología (2024) · Investigación (2018)</span>
+            </li>
+          </ul>
+        </div>
+        <div class="docencia-card reveal">
+          <h3>Revisión por pares</h3>
+          <ul>
+            <li>
+              <strong>Modelos de regresión para el análisis del gasto catastrófico en salud, con énfasis en regresión cuantílica</strong>
+              <span class="meta">Dictamen académico · Colombia · 2026</span>
+            </li>
+            <li>
+              <strong>Household cost of accessing contraceptive services among women in urban communities in Ghana</strong>
+              <span class="meta">Evaluadora externa por pares · 2024</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="congresos" class="section congresos">
     <div class="wrap">
-      <p class="section-label reveal">05 — Congresos y ponencias</p>
+      <p class="section-label reveal">06 — Congresos y ponencias</p>
       <h2 class="section-title reveal">Divulgación reciente</h2>
       <ol class="timeline">
         <li class="reveal is-upcoming">
@@ -262,11 +395,23 @@
 
   <section id="contacto" class="section contacto">
     <div class="wrap">
-      <p class="section-label reveal">06 — Contacto</p>
+      <p class="section-label reveal">07 — Contacto</p>
       <h2 class="section-title reveal">Conversemos</h2>
       <p class="contacto-lede reveal">Disponible para colaboración interinstitucional, revisión por pares
         y proyectos de investigación aplicada en economía de la salud e
         inteligencia artificial.</p>
+
+      <div class="contact-actions reveal">
+        <a class="btn btn-primary" href="mailto:doctoradoruthperez@gmail.com">Escribir un correo</a>
+        <button class="btn btn-ghost copy-btn" id="copyEmail" type="button"
+                data-email="doctoradoruthperez@gmail.com"
+                data-copied="Correo copiado">
+          Copiar correo
+          <span class="copied" aria-hidden="true">Copiado</span>
+        </button>
+        <a class="btn btn-ghost" href="assets/ruth-perez-hernandez.vcf" download>Guardar contacto</a>
+      </div>
+
       <div class="contact-grid reveal">
         <a class="contact-card" href="mailto:doctoradoruthperez@gmail.com">
           <span class="contact-label">Correo</span>
@@ -288,8 +433,9 @@
 
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <p>Ruth Manuela Pérez Hernández</p>
+    <p class="footer-name">Ruth Manuela Pérez Hernández</p>
     <p class="footer-note">Congreso ALASS 2026 · Montreal, Canadá</p>
+    <a class="to-top" href="#top">Volver arriba ↑</a>
   </div>
 </footer>
 
